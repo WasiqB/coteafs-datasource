@@ -11,9 +11,23 @@ import com.github.wasiqb.coteafs.datasource.parser.YamlDataSource;
 import com.github.wasiqb.coteafs.datasource.utils.DataFileUtil;
 import com.github.wasiqb.coteafs.error.OperationNotSupportedError;
 
+/**
+ * Helper class to parse data file.
+ *
+ * @author Wasiq Bhamla
+ * @since 20-08-2020
+ */
 public class DataSource {
-    public <T> T parse (final Class<T> dataClass) {
-        final DataFileUtil<T> dataFile = new DataFileUtil<> (dataClass);
+    /**
+     * Parses the data file according to their file format.
+     *
+     * @param dataClass Data file class.
+     * @param <T> Class type.
+     *
+     * @return Data class object.
+     */
+    public static <T> T parse (final Class<T> dataClass) {
+        final DataFileUtil<T> dataFile = DataFileUtil.getInstance (dataClass);
         final String fileName = dataFile.getFileName ();
         final String extension = fileName.substring (fileName.lastIndexOf ('.') + 1);
         IDataSource dataSource = null;
@@ -36,5 +50,9 @@ public class DataSource {
                     format ("This data file format [{0}] is not supported.", extension));
         }
         return dataSource.parse (dataFile.getPath (), dataClass);
+    }
+
+    private DataSource () {
+        // Utility class.
     }
 }

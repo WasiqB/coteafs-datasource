@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
 public class DataSourceTest {
     @DataProvider
     public Iterator<Object[]> getLoginDataYml () {
-        final LoginData loginData = new DataSource ().parse (LoginData.class);
+        final LoginData loginData = DataSource.parse (LoginData.class);
         final List<Object[]> data = new ArrayList<> ();
         loginData.getLoginData ()
             .forEach (d -> data.add (new Object[] { d }));

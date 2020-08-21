@@ -36,7 +36,26 @@ import java.lang.annotation.Target;
 @Target (ElementType.TYPE)
 @Retention (RetentionPolicy.RUNTIME)
 public @interface DataFile {
+    /**
+     * Data file name, if not provided, it will be data class name in
+     * lower case hyphen separated words.
+     *
+     * @return Data file name
+     */
     String fileName () default EMPTY;
 
+    /**
+     * Relative folder path containing data files. If not provided,
+     * it will consider {@code src/test/resources}
+     *
+     * @return Folder path
+     */
     String folderPath () default EMPTY;
+
+    /**
+     * Root project folder path. By default it will be project root.
+     *
+     * @return Root folder path.
+     */
+    String rootFolder () default EMPTY;
 }
