@@ -27,16 +27,30 @@ import com.github.wasiqb.coteafs.datasource.data.LoginData;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+/**
+ * @author Wasiq Bhamla
+ * @since Aug 21, 2020
+ */
 public class DataSourceTest {
+    /**
+     * @author Faisal Khatri
+     * @since Aug 21, 2020
+     * @return test data
+     */
     @DataProvider
-    public Iterator<Object[]> getLoginDataYml () {
+    public Iterator<Object []> getLoginDataYml () {
         final LoginData loginData = DataSource.parse (LoginData.class);
-        final List<Object[]> data = new ArrayList<> ();
+        final List<Object []> data = new ArrayList<> ();
         loginData.getLoginData ()
-            .forEach (d -> data.add (new Object[] { d }));
+            .forEach (d -> data.add (new Object [] { d }));
         return data.iterator ();
     }
 
+    /**
+     * @author Wasiq Bhamla
+     * @since Aug 21, 2020
+     * @param login
+     */
     @Test (dataProvider = "getLoginDataYml")
     public void testYmlDataSource (final Login login) {
         assertWithMessage ("User Name").that (login.getUserName ())
