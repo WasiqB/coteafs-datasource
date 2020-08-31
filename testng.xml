@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Data Source Test Suite">
+  <test name="Test">
+    <classes>
+      <class name="com.github.wasiqb.coteafs.datasource.YmlTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.PropertiesTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.XmlTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.DataSourceTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.JsonTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
