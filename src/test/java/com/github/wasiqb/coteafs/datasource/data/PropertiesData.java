@@ -9,7 +9,7 @@ import lombok.Data;
  *
  */
 @Data
-@DataFile (fileName = "config.properties", folderPath = "src\\test\\resources\\properties_file")
+@DataFile (fileName = "config.properties", folderPath = "src/test/resources/properties_file")
 
 public class PropertiesData {
 

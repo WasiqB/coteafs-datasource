@@ -9,7 +9,7 @@ import lombok.Data;
  *
  */
 @Data
-@DataFile ( folderPath = "src\\test\\resources\\files\\xmlfiles", fileName = "testfile.xml")
+@DataFile ( folderPath = "src/test/resources/files/xmlfiles", fileName = "testfile.xml")
 public class XmlData {
     
     private String to;

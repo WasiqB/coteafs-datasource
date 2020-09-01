@@ -24,6 +24,8 @@ import java.util.List;
 
 import com.github.wasiqb.coteafs.datasource.data.Login;
 import com.github.wasiqb.coteafs.datasource.data.LoginData;
+import com.github.wasiqb.coteafs.datasource.data.SampleFile;
+import com.github.wasiqb.coteafs.datasource.data.XmasFifthDay;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -31,7 +33,7 @@ import org.testng.annotations.Test;
  * @author Wasiq Bhamla
  * @since Aug 21, 2020
  */
-public class DataSourceTest {
+public class DataSourceYmlTest {
     /**
      * @author Faisal Khatri
      * @since Aug 21, 2020
@@ -58,4 +60,49 @@ public class DataSourceTest {
         assertWithMessage ("Password").that (login.getPassword ())
             .isNotEmpty ();
     }
+
+    /**
+     * @author Faisal Khatri
+     * @since Aug 29, 2020
+     * @return testdata
+     */
+    @DataProvider
+    public Iterator<Object []> testData () {
+        final SampleFile testData = DataSource.parse (SampleFile.class);
+        final List<Object []> data = new ArrayList<> ();
+        data.add (new Object [] { testData.getDoe (), testData.getRay (), testData.getPi (), testData.getFrenchhens (),
+            testData.getCallingBirds (), testData.getXmasFifthDay () });
+        return data.iterator ();
+    }
+
+    /**
+     * Test to read Yaml file using coteafs-datasource
+     *
+     * @author Faisal Khatri
+     * @param doe
+     * @param ray
+     * @param pi
+     * @param frenchHens
+     * @param callingBirds
+     * @param xmasFifthDay
+     * @since Aug 29, 2020
+     */
+    @Test (dataProvider = "testData")
+    public void readingYamlFileTest (String doe, String ray, float pi, int frenchHens, String [] callingBirds,
+        XmasFifthDay xmasFifthDay) {
+
+        assertWithMessage ("doe").that (doe)
+            .isNotEmpty ();
+        assertWithMessage ("ray").that (ray)
+            .isNotEmpty ();
+        assertWithMessage ("pi").that (pi)
+            .isNonZero ();
+        assertWithMessage ("frenchHens").that (frenchHens)
+            .isNotNull ();
+        assertWithMessage ("callingBirds").that (callingBirds)
+            .isNotEmpty ();
+        assertWithMessage ("xmasFifthDay").that (xmasFifthDay)
+            .isNotNull ();
+    }
+
 }

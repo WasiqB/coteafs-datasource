@@ -14,14 +14,13 @@ import org.testng.annotations.Test;
  * @author Faisal Khatri
  * @since Aug 31, 2020
  */
-public class XmlTest {
+public class DataSourceXmlTest {
 
     /**
      * @author Faisal Khatri
      * @since Aug 31, 2020
      * @return testdata
      */
-    @Test
     @DataProvider
     public Iterator<Object []> testData () {
         final XmlData testData = DataSource.parse (XmlData.class);
@@ -42,9 +41,8 @@ public class XmlTest {
      * @param body
      */
     @Test (dataProvider = "testData")
-    public void readingXmlFile (String to, String from, String heading, String body) {
+    public void readingXmlFileTest (String to, String from, String heading, String body) {
 
-        System.out.println ("Starting xml test...");
         assertWithMessage ("to").that (to)
             .isNotEmpty ();
         assertWithMessage ("from").that (from)
@@ -53,11 +51,6 @@ public class XmlTest {
             .isNotEmpty ();
         assertWithMessage ("body").that (body)
             .isNotEmpty ();
-
-        System.out.println ("Value of To: " + to);
-        System.out.println ("Value of From: " + from);
-        System.out.println ("Value of Heading: " + heading);
-        System.out.println ("Value of Body: " + body);
 
     }
 

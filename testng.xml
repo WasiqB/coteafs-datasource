@@ -3,11 +3,10 @@
 <suite name="Data Source Test Suite">
   <test name="Test">
     <classes>
-      <class name="com.github.wasiqb.coteafs.datasource.YmlTest"/>
-      <class name="com.github.wasiqb.coteafs.datasource.PropertiesTest"/>
-      <class name="com.github.wasiqb.coteafs.datasource.XmlTest"/>
-      <class name="com.github.wasiqb.coteafs.datasource.DataSourceTest"/>
-      <class name="com.github.wasiqb.coteafs.datasource.JsonTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.DataSourcePropertiesTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.DataSourceXmlTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.DataSourceYmlTest"/>
+      <class name="com.github.wasiqb.coteafs.datasource.DataSourceJsonTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

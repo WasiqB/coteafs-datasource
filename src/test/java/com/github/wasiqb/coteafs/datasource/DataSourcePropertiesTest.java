@@ -14,14 +14,13 @@ import org.testng.annotations.Test;
  * @author Faisal Khatri
  * @since Aug 31, 2020
  */
-public class PropertiesTest {
+public class DataSourcePropertiesTest {
 
     /**
      * @author Faisal Khatri
      * @since Aug 31, 2020
      * @return testdata
      */
-    @Test
     @DataProvider
     public Iterator<Object []> testData () {
         final PropertiesData testData = DataSource.parse (PropertiesData.class);
@@ -40,18 +39,14 @@ public class PropertiesTest {
      * @param port
      */
     @Test (dataProvider = "testData")
-    public void readingPropertiesFile (String testUrl, String userName, int port) {
+    public void readingPropertiesFileTest (String testUrl, String userName, int port) {
 
-        System.out.println ("Starting properties test...");
         assertWithMessage ("testurl").that (testUrl)
             .isNotEmpty ();
         assertWithMessage ("username").that (userName)
             .isNotEmpty ();
         assertWithMessage ("port").that (port)
             .isNotNull ();
-        System.out.println ("Value of Test url: " + testUrl);
-        System.out.println ("Value of User name: " + userName);
-        System.out.println ("Value of Port: " + port);
 
     }
 
