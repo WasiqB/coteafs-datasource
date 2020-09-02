@@ -21,6 +21,11 @@ import java.util.List;
 import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
 import lombok.Data;
 
+/**
+ * @author Wasiq Bhamla
+ * @since Aug 21, 2020
+ *
+ */
 @DataFile
 @Data
 public class LoginData {
