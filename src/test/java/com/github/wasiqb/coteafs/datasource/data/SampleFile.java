@@ -26,7 +26,6 @@ import lombok.Data;
 @Data
 @DataFile (fileName = "SampleFile.yaml")
 public class SampleFile {
-
     private XmasFifthDay XmasFifthDay;
     private String[]     callingBirds;
     private String       doe;
@@ -34,5 +33,4 @@ public class SampleFile {
     private float        pi;
     private String       ray;
     private boolean      xmas;
-
 }

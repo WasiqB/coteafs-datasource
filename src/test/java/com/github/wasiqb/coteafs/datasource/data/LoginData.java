@@ -24,7 +24,6 @@ import lombok.Data;
 /**
  * @author Wasiq Bhamla
  * @since Aug 21, 2020
- *
  */
 @DataFile
 @Data
