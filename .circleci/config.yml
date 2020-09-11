@@ -1,0 +1,52 @@
+version: 2.1
+
+orbs:
+  maven-deploy: wasiqb/maven-deploy@2.0.8
+
+branches: &all
+  only:
+    - master
+    - release
+    - /issue-.*/
+
+workflows:
+  workflow:
+    jobs:
+      - maven-deploy/code-checkout
+      - maven-deploy/resolve-dependency:
+          requires:
+            - maven-deploy/code-checkout
+          filters:
+            branches:
+              <<: *all
+      - maven-deploy/build:
+          requires:
+            - maven-deploy/resolve-dependency
+          filters:
+            branches:
+              <<: *all
+      - maven-deploy/test:
+          command: ENV_URL=http://localhost mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test -Dtype=SOAP
+          requires:
+            - maven-deploy/build
+          filters:
+            branches:
+              <<: *all
+      - maven-deploy/sonar-analysis:
+          requires:
+            - maven-deploy/test
+          filters:
+            branches:
+              <<: *all
+          context: RELEASE_PROFILE_WASIQB
+      - maven-deploy/deploy:
+          mentions: mfaisalkhatri,wbhamla1
+          fail_only: false
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - maven-deploy/sonar-analysis
+          context: RELEASE_PROFILE_WASIQB
+          deploy-command: mvn deploy --settings settings/settings.xml -DskipTests -Dcheckstyle.skip -B -Prelease
