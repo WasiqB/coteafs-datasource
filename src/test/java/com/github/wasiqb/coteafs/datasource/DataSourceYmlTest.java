@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 {name of copyright owner}
+ * Copyright (c) 2020 Wasiq Bhamla
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,61 +35,36 @@ import org.testng.annotations.Test;
  */
 public class DataSourceYmlTest {
     /**
-     * @author Faisal Khatri
-     * @since Aug 21, 2020
      * @return test data
-     */
-    @DataProvider
-    public Iterator<Object []> getLoginDataYml () {
-        final LoginData loginData = DataSource.parse (LoginData.class);
-        final List<Object []> data = new ArrayList<> ();
-        loginData.getLoginData ()
-            .forEach (d -> data.add (new Object [] { d }));
-        return data.iterator ();
-    }
-
-    /**
-     * @author Wasiq Bhamla
-     * @since Aug 21, 2020
-     * @param login
-     */
-    @Test (dataProvider = "getLoginDataYml")
-    public void testYmlDataSource (final Login login) {
-        assertWithMessage ("User Name").that (login.getUserName ())
-            .isNotEmpty ();
-        assertWithMessage ("Password").that (login.getPassword ())
-            .isNotEmpty ();
-    }
-
-    /**
+     *
      * @author Faisal Khatri
-     * @since Aug 29, 2020
-     * @return testdata
+     * @since Aug 21, 2020
      */
     @DataProvider
-    public Iterator<Object []> testData () {
-        final SampleFile testData = DataSource.parse (SampleFile.class);
-        final List<Object []> data = new ArrayList<> ();
-        data.add (new Object [] { testData.getDoe (), testData.getRay (), testData.getPi (), testData.getFrenchhens (),
-            testData.getCallingBirds (), testData.getXmasFifthDay () });
+    public Iterator<Object[]> getLoginDataYml () {
+        final LoginData loginData = DataSource.parse (LoginData.class);
+        final List<Object[]> data = new ArrayList<> ();
+        loginData.getLoginData ()
+            .forEach (d -> data.add (new Object[] { d }));
         return data.iterator ();
     }
 
     /**
      * Test to read Yaml file using coteafs-datasource
      *
-     * @author Faisal Khatri
      * @param doe
      * @param ray
      * @param pi
      * @param frenchHens
      * @param callingBirds
      * @param xmasFifthDay
+     *
+     * @author Faisal Khatri
      * @since Aug 29, 2020
      */
     @Test (dataProvider = "testData")
-    public void readingYamlFileTest (String doe, String ray, float pi, int frenchHens, String [] callingBirds,
-        XmasFifthDay xmasFifthDay) {
+    public void readingYamlFileTest (final String doe, final String ray, final float pi, final int frenchHens,
+        final String[] callingBirds, final XmasFifthDay xmasFifthDay) {
 
         assertWithMessage ("doe").that (doe)
             .isNotEmpty ();
@@ -105,4 +80,32 @@ public class DataSourceYmlTest {
             .isNotNull ();
     }
 
+    /**
+     * @return testdata
+     *
+     * @author Faisal Khatri
+     * @since Aug 29, 2020
+     */
+    @DataProvider
+    public Iterator<Object[]> testData () {
+        final SampleFile testData = DataSource.parse (SampleFile.class);
+        final List<Object[]> data = new ArrayList<> ();
+        data.add (new Object[] { testData.getDoe (), testData.getRay (), testData.getPi (), testData.getFrenchhens (),
+            testData.getCallingBirds (), testData.getXmasFifthDay () });
+        return data.iterator ();
+    }
+
+    /**
+     * @param login
+     *
+     * @author Wasiq Bhamla
+     * @since Aug 21, 2020
+     */
+    @Test (dataProvider = "getLoginDataYml")
+    public void testYmlDataSource (final Login login) {
+        assertWithMessage ("User Name").that (login.getUserName ())
+            .isNotEmpty ();
+        assertWithMessage ("Password").that (login.getPassword ())
+            .isNotEmpty ();
+    }
 }

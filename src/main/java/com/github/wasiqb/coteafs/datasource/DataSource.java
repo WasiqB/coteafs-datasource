@@ -46,26 +46,26 @@ public class DataSource {
         final DataFileUtil<T> dataFile = DataFileUtil.getInstance (dataClass);
         final String fileName = dataFile.getFileName ();
         final String extension = fileName.substring (fileName.lastIndexOf ('.') + 1);
-        IDataSource dataSource = null;
+        final IDataSource dataSource = getDataSource (extension);
+        return dataSource.parse (dataFile.getPath (), dataClass);
+    }
+
+    private static IDataSource getDataSource (final String extension) {
         switch (extension.toLowerCase ()) {
             case "yaml":
             case "yml":
-                dataSource = new YamlDataSource ();
-                break;
+                return new YamlDataSource ();
             case "json":
-                dataSource = new JsonDataSource ();
-                break;
+                return new JsonDataSource ();
             case "properties":
-                dataSource = new PropertiesDataSource ();
-                break;
+                return new PropertiesDataSource ();
             case "xml":
-                dataSource = new XmlDataSource ();
-                break;
+                return new XmlDataSource ();
             default:
                 fail (OperationNotSupportedError.class,
                     format ("This data file format [{0}] is not supported.", extension));
         }
-        return dataSource.parse (dataFile.getPath (), dataClass);
+        return null;
     }
 
     private DataSource () {
