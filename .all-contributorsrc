@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mfaisalkhatri",
+      "name": "Mohammad Faisal Khatri",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/18361917?v=4",
+      "profile": "https://mfaisalkhatri.github.io",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "coteafs-datasource",
+  "projectOwner": "WasiqB",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
