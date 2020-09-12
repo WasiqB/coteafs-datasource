@@ -33,6 +33,7 @@ workflows:
             branches:
               <<: *all
       - maven-deploy/sonar-analysis:
+          command: mvn verify sonar:sonar
           requires:
             - maven-deploy/test
           filters:
