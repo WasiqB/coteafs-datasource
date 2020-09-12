@@ -15,6 +15,18 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "WasiqB",
+      "name": "Wasiq Bhamla",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9130909?v=4",
+      "profile": "https://wasiqb.github.io",
+      "contributions": [
+        "code",
+        "test",
+        "infra",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
