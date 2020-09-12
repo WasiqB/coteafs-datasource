@@ -30,6 +30,9 @@
     </parent>
 
     <properties>
+        <sonar.projectKey>WasiqB_coteafs-datasource</sonar.projectKey>
+        <sonar.organization>wasiqb-github</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <coteafs.error.version>1.15.0</coteafs.error.version>
         <jackson.version>2.11.2</jackson.version>
         <commons.text.version>1.9</commons.text.version>
