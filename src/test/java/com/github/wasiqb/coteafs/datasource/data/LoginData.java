@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 {name of copyright owner}
+ * Copyright (c) 2020 Wasiq Bhamla
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,10 @@ import java.util.List;
 import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
 import lombok.Data;
 
+/**
+ * @author Wasiq Bhamla
+ * @since Aug 21, 2020
+ */
 @DataFile
 @Data
 public class LoginData {

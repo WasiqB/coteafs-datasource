@@ -16,14 +16,21 @@
 
 package com.github.wasiqb.coteafs.datasource.data;
 
+import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
 import lombok.Data;
 
 /**
- * @author Wasiq Bhamla
- * @since Aug 21, 2020
+ * @author Faisal Khatri
+ * @since Aug 31, 2020
  */
 @Data
-public class Login {
-    private String password;
-    private String userName;
+@DataFile
+public class JsonTestData {
+    private XmasFifthDay XmasFifthDay;
+    private String[]     callingBirds;
+    private String       doe;
+    private int          frenchHens;
+    private float        pi;
+    private String       ray;
+    private boolean      xmas;
 }

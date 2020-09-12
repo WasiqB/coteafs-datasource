@@ -16,14 +16,18 @@
 
 package com.github.wasiqb.coteafs.datasource.data;
 
+import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
 import lombok.Data;
 
 /**
- * @author Wasiq Bhamla
- * @since Aug 21, 2020
+ * @author Faisal Khatri
+ * @since Aug 31, 2020
  */
 @Data
-public class Login {
-    private String password;
-    private String userName;
+@DataFile (folderPath = "src/test/resources/files/xmlfiles", fileName = "testfile.xml")
+public class XmlData {
+    private String body;
+    private String from;
+    private String heading;
+    private String to;
 }

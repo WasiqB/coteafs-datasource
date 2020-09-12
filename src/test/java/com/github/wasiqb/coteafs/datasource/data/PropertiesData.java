@@ -16,14 +16,17 @@
 
 package com.github.wasiqb.coteafs.datasource.data;
 
+import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
 import lombok.Data;
 
 /**
- * @author Wasiq Bhamla
- * @since Aug 21, 2020
+ * @author Faisal Khatri
+ * @since Aug 31, 2020
  */
 @Data
-public class Login {
-    private String password;
-    private String userName;
+@DataFile (fileName = "config.properties", folderPath = "src/test/resources/properties_file")
+public class PropertiesData {
+    private int    port;
+    private String testurl;
+    private String username;
 }

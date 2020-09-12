@@ -19,11 +19,14 @@ package com.github.wasiqb.coteafs.datasource.data;
 import lombok.Data;
 
 /**
- * @author Wasiq Bhamla
- * @since Aug 21, 2020
+ * @author Faisal Khatri
+ * @since Aug 29, 2020
  */
 @Data
-public class Login {
-    private String password;
-    private String userName;
+public class XmasFifthDay {
+    private String     callingBirds;
+    private int        frenchHens;
+    private int        goldenRings;
+    private Partridges partridges;
+    private String     turtleDoves;
 }

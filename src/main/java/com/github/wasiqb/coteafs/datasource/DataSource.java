@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2020 Wasiq Bhamla
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.wasiqb.coteafs.datasource;
 
 import static com.github.wasiqb.coteafs.error.util.ErrorUtil.fail;
@@ -30,26 +46,26 @@ public class DataSource {
         final DataFileUtil<T> dataFile = DataFileUtil.getInstance (dataClass);
         final String fileName = dataFile.getFileName ();
         final String extension = fileName.substring (fileName.lastIndexOf ('.') + 1);
-        IDataSource dataSource = null;
+        final IDataSource dataSource = getDataSource (extension);
+        return dataSource.parse (dataFile.getPath (), dataClass);
+    }
+
+    private static IDataSource getDataSource (final String extension) {
         switch (extension.toLowerCase ()) {
             case "yaml":
             case "yml":
-                dataSource = new YamlDataSource ();
-                break;
+                return new YamlDataSource ();
             case "json":
-                dataSource = new JsonDataSource ();
-                break;
+                return new JsonDataSource ();
             case "properties":
-                dataSource = new PropertiesDataSource ();
-                break;
+                return new PropertiesDataSource ();
             case "xml":
-                dataSource = new XmlDataSource ();
-                break;
+                return new XmlDataSource ();
             default:
                 fail (OperationNotSupportedError.class,
                     format ("This data file format [{0}] is not supported.", extension));
         }
-        return dataSource.parse (dataFile.getPath (), dataClass);
+        return null;
     }
 
     private DataSource () {
