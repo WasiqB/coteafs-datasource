@@ -18,6 +18,7 @@ package com.github.wasiqb.coteafs.datasource;
 
 import static com.github.wasiqb.coteafs.error.util.ErrorUtil.fail;
 import static java.text.MessageFormat.format;
+import static java.util.Objects.requireNonNull;
 
 import com.github.wasiqb.coteafs.datasource.parser.IDataSource;
 import com.github.wasiqb.coteafs.datasource.parser.JsonDataSource;
@@ -47,7 +48,7 @@ public class DataSource {
         final String fileName = dataFile.getFileName ();
         final String extension = fileName.substring (fileName.lastIndexOf ('.') + 1);
         final IDataSource dataSource = getDataSource (extension);
-        return dataSource.parse (dataFile.getPath (), dataClass);
+        return requireNonNull (dataSource).parse (dataFile.getPath (), dataClass);
     }
 
     private static IDataSource getDataSource (final String extension) {

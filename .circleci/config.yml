@@ -26,14 +26,12 @@ workflows:
             branches:
               <<: *all
       - maven-deploy/test:
-          command: ENV_URL=http://localhost mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test -Dtype=SOAP
           requires:
             - maven-deploy/build
           filters:
             branches:
               <<: *all
       - maven-deploy/sonar-analysis:
-          command: mvn verify sonar:sonar
           requires:
             - maven-deploy/test
           filters:
