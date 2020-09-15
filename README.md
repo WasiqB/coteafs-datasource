@@ -1,10 +1,92 @@
 # coteafs-datasource
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a aria-label="All Contributors" href="#contributors-"><img alt="" src="https://img.shields.io/badge/all_contributors-2-17BB8A.svg?style=for-the-badge&labelColor=000000"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+## Usage :running:
+
+### Dependency
+
+```xml
+<dependency>
+  <groupId>com.github.wasiqb.coteafs</groupId>
+  <artifactId>datasource</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+### Example
+
+#### Pojo Classes
+
+Pojo class for our data file `login-data.yml`.
+
+```java
+import java.util.List;
+
+import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
+import lombok.Data;
+
+@Data
+@DataFile
+public class LoginData {
+    private List<Login> loginData;
+}
+
+@Data
+public class Login {
+    private String password;
+    private String userName;
+}
+```
+
+#### Data file content
+
+Data for our Yml data file `login-data.yml`.
+
+```yml
+login_data:
+  - user_name: WasiqB
+    password: Admin
+  - user_name: FaisalK
+    password: Abcd
+```
+
+#### Parsing data file
+
+Following is an example to convert data file into a TestNG data provider.
+
+```java
+import static com.google.common.truth.Truth.assertWithMessage;
+
+import com.github.wasiqb.coteafs.datasource.data.LoginData;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataSourceYmlTest {
+    @DataProvider
+    public Iterator<Object[]> getLoginDataYml () {
+        final LoginData loginData = DataSource.parse (LoginData.class);
+        final List<Object[]> data = new ArrayList<> ();
+        loginData.getLoginData ()
+            .forEach (d -> data.add (new Object[] { d }));
+        return data.iterator ();
+    }
+    
+    @Test (dataProvider = "getLoginDataYml")
+    public void testYmlDataSource (final Login login) {
+        assertWithMessage ("User Name").that (login.getUserName ())
+            .isNotEmpty ();
+        assertWithMessage ("Password").that (login.getPassword ())
+            .isNotEmpty ();
+    }
+}
+```
+
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
