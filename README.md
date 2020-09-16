@@ -1,8 +1,15 @@
 # coteafs-datasource
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)][home]
+[![CircleCI](https://circleci.com/gh/WasiqB/coteafs-datasource.svg?style=svg)][circleci]
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a aria-label="All Contributors" href="#contributors-"><img alt="" src="https://img.shields.io/badge/all_contributors-2-17BB8A.svg?style=for-the-badge&labelColor=000000"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.wasiqb.coteafs/datasource.svg?style=for-the-badge)][maven]
+[![Github Releases](https://img.shields.io/github/downloads/WasiqB/coteafs-datasource/total-green.svg?style=for-the-badge)][release]
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)][license]
 
 ## Usage :running:
 
@@ -86,7 +93,7 @@ public class DataSourceYmlTest {
 
 ## Contributors ✨
 
-Thanks to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks to these wonderful people ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -102,4 +109,13 @@ Thanks to these wonderful people ([emoji key](https://allcontributors.org/docs/e
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors][contributors] specification. Contributions of any kind welcome!
+
+[emojis]: https://allcontributors.org/docs/en/emoji-key
+[contributors]: https://github.com/all-contributors/all-contributors
+[home]: https://github.com/wasiqb/coteafs-config
+[circleci]: https://circleci.com/gh/WasiqB/coteafs-datasource
+[coverage]: https://sonarcloud.io/component_measures?id=com.github.wasiqb.coteafs%3Adatasource&metric=Coverage
+[maven]: https://maven-badges.herokuapp.com/maven-central/com.github.wasiqb.coteafs/datasource
+[release]: https://github.com/WasiqB/coteafs-datasource/releases
+[license]: https://opensource.org/licenses/Apache-2.0
