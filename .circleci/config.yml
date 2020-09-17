@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  maven-deploy: wasiqb/maven-deploy@2.0.8
+  maven-deploy: wasiqb/maven-deploy@2.0.9
 
 branches: &all
   only:
