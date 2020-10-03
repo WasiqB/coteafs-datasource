@@ -1,8 +1,18 @@
+# IntelliJ IDEA
 /.idea/
-/target/
 *.iml
+
+# Eclipse IDE
+/.settings/
 /.classpath
 /.project
-/.settings/
-.DS_Store
+
+# Other output folders
+/target/
+/bin/
+/test-output/
+/logs/
 /reports/
+
+# Mac OSX
+.DS_Store
