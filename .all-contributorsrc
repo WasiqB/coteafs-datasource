@@ -1,0 +1,39 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "contributorsSortAlphabetically": false,
+  "badgeTemplate": "<a aria-label=\"All Contributors\" href=\"#contributors-\"><img alt=\"\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-17BB8A.svg?style=for-the-badge&labelColor=000000\"></a>",
+  "contributors": [
+    {
+      "login": "mfaisalkhatri",
+      "name": "Mohammad Faisal Khatri",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/18361917?v=4",
+      "profile": "https://mfaisalkhatri.github.io",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "WasiqB",
+      "name": "Wasiq Bhamla",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9130909?v=4",
+      "profile": "https://wasiqb.github.io",
+      "contributions": [
+        "code",
+        "test",
+        "infra",
+        "doc",
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "coteafs-datasource",
+  "projectOwner": "WasiqB",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
