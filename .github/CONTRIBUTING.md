@@ -1,4 +1,4 @@
-# Contributing to <project-name>.
+# Contributing to coteafs-datasource.
 
 :+1: :tada: Firstly, thanks for taking the time to contribute! :tada: :+1:
 
@@ -111,8 +111,8 @@ If you find any issue in the framework or you have any suggestions for enhanceme
 
 [sign-commit]: https://help.github.com/en/articles/signing-commits
 [formatter]: https://github.com/WasiqB/java-formatter
-[tracker]: https://github.com/WasiqB/coteafs-selenium/issues?q=something
-[new issue]: https://github.com/WasiqB/coteafs-selenium/issues/new
+[tracker]: https://github.com/WasiqB/coteafs-datasource/issues?q=something
+[new issue]: https://github.com/WasiqB/coteafs-datasource/issues/new
 [fork]: https://help.github.com/articles/fork-a-repo/
 [branch]: https://www.atlassian.com/git/tutorials/using-branches
 [setup]: https://help.github.com/articles/setting-your-commit-email-address-in-git
