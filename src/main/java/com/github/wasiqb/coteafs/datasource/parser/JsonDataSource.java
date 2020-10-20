@@ -20,7 +20,9 @@ import static com.fasterxml.jackson.databind.PropertyNamingStrategy.SNAKE_CASE;
 
 import java.io.File;
 
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.wasiqb.coteafs.datasource.internal.factory.JsonDataFactory;
 import lombok.SneakyThrows;
 
 /**
@@ -33,7 +35,8 @@ public class JsonDataSource implements IDataSource {
     private final ObjectMapper mapper;
 
     public JsonDataSource () {
-        this.mapper = new ObjectMapper ();
+        final JsonFactory factory = new JsonDataFactory ();
+        this.mapper = new ObjectMapper (factory);
         this.mapper.setPropertyNamingStrategy (SNAKE_CASE);
     }
 

@@ -1,5 +1,7 @@
 login_data:
   - user_name: WasiqB
     password: Admin
+    path: ${sys:user.dir}
   - user_name: FaisalK
     password: Abcd
+    path: ${sys:user.dir}
