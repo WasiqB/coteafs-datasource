@@ -69,6 +69,7 @@ Following is an example to convert data file into a TestNG data provider.
 
 ```java
 import static com.google.common.truth.Truth.assertWithMessage;
+import static java.lang.System.getProperty;
 
 import com.github.wasiqb.coteafs.datasource.data.LoginData;
 import org.testng.annotations.DataProvider;
@@ -90,6 +91,8 @@ public class DataSourceYmlTest {
             .isNotEmpty ();
         assertWithMessage ("Password").that (login.getPassword ())
             .isNotEmpty ();
+        assertWithMessage ("Path").that (login.getPath ())
+            .isEqualTo (getProperty ("user.dir"));
     }
 }
 ```
