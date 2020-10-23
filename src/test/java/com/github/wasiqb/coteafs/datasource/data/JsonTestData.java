@@ -32,5 +32,6 @@ public class JsonTestData {
     private int          frenchHens;
     private float        pi;
     private String       ray;
+    private String       user;
     private boolean      xmas;
 }
