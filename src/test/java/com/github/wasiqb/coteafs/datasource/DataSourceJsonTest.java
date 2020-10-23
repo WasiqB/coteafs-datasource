@@ -17,6 +17,7 @@
 package com.github.wasiqb.coteafs.datasource;
 
 import static com.google.common.truth.Truth.assertWithMessage;
+import static java.lang.System.getProperty;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -41,13 +42,14 @@ public class DataSourceJsonTest {
      * @param frenchHens
      * @param callingBirds
      * @param xmasFifthDay
+     * @param user
      *
      * @author Faisal Khatri
      * @since Aug 31, 2020
      */
     @Test (dataProvider = "testData")
     public void readingJsonFileTest (final String doe, final String ray, final float pi, final int frenchHens,
-        final String[] callingBirds, final XmasFifthDay xmasFifthDay) {
+        final String[] callingBirds, final XmasFifthDay xmasFifthDay, final String user) {
         assertWithMessage ("doe").that (doe)
             .isNotEmpty ();
         assertWithMessage ("ray").that (ray)
@@ -60,6 +62,8 @@ public class DataSourceJsonTest {
             .isNotEmpty ();
         assertWithMessage ("xmasFifthDay").that (xmasFifthDay)
             .isNotNull ();
+        assertWithMessage ("user").that (user)
+            .isEqualTo (getProperty ("user.name"));
     }
 
     /**
@@ -73,7 +77,7 @@ public class DataSourceJsonTest {
         final JsonTestData testData = DataSource.parse (JsonTestData.class);
         final List<Object[]> data = new ArrayList<> ();
         data.add (new Object[] { testData.getDoe (), testData.getRay (), testData.getPi (), testData.getFrenchHens (),
-            testData.getCallingBirds (), testData.getXmasFifthDay () });
+            testData.getCallingBirds (), testData.getXmasFifthDay (), testData.getUser () });
         return data.iterator ();
     }
 }

@@ -3,21 +3,22 @@
   "ray": "a drop of golden sun",
   "pi": 3.14159,
   "xmas": true,
+  "user": "${sys:user.name}",
   "french_hens": 3,
   "calling_birds": [
-     "huey",
-     "dewey",
-     "louie",
-     "fred"
+    "huey",
+    "dewey",
+    "louie",
+    "fred"
   ],
   "xmas_fifth_day": {
-  "calling_birds": "four",
-  "french_hens": 3,
-  "golden_rings": 5,
-  "partridges": {
-    "count": 1,
-    "location": "a pear tree"
-  },
-  "turtle_doves": "two"
+    "calling_birds": "four",
+    "french_hens": 3,
+    "golden_rings": 5,
+    "partridges": {
+      "count": 1,
+      "location": "a pear tree"
+    },
+    "turtle_doves": "two"
   }
 }
