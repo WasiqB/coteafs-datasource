@@ -8,7 +8,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.wasiqb.coteafs/datasource.svg?style=for-the-badge)][maven]
-[![Github Releases](https://img.shields.io/github/downloads/WasiqB/coteafs-datasource/total-green.svg?style=for-the-badge)][release]
+[![Github Releases](https://img.shields.io/github/downloads/WasiqB/coteafs-datasource/total.svg?style=for-the-badge)][release]
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)][license]
 
 ## Usage :running:
@@ -19,7 +19,7 @@
 <dependency>
   <groupId>com.github.wasiqb.coteafs</groupId>
   <artifactId>datasource</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -45,6 +45,7 @@ public class LoginData {
 public class Login {
     private String password;
     private String userName;
+    private String path;
 }
 ```
 
@@ -56,8 +57,10 @@ Data for our Yml data file `login-data.yml`.
 login_data:
   - user_name: WasiqB
     password: Admin
+    path: ${sys:user.dir}
   - user_name: FaisalK
     password: Abcd
+    path: ${sys:user.dir}
 ```
 
 #### Parsing data file
@@ -66,6 +69,7 @@ Following is an example to convert data file into a TestNG data provider.
 
 ```java
 import static com.google.common.truth.Truth.assertWithMessage;
+import static java.lang.System.getProperty;
 
 import com.github.wasiqb.coteafs.datasource.data.LoginData;
 import org.testng.annotations.DataProvider;
@@ -87,9 +91,40 @@ public class DataSourceYmlTest {
             .isNotEmpty ();
         assertWithMessage ("Password").that (login.getPassword ())
             .isNotEmpty ();
+        assertWithMessage ("Path").that (login.getPath ())
+            .isEqualTo (getProperty ("user.dir"));
     }
 }
 ```
+
+#### Parsing placeholders in file field values
+
+You can use placeholders in JSON and YML files. Following is the table of allowed variable formats which can be used
+ in the placeholder.
+
+Desired value | Sample Placeholder
+------------|------------
+Base64 Decoder | `${base64Decoder:SGVsbG9Xb3JsZCE=}`
+Base64 Encoder | `${base64Encoder:HelloWorld!}`
+Java Constant | `${const:java.awt.event.KeyEvent.VK_ESCAPE}`
+Date | `${date:yyyy-MM-dd}`
+DNS | <code>${dns:address&#124;apache.org}</code>
+Environment Variable | `${env:USERNAME}`
+File Content | `${file:UTF-8:src/test/resources/document.properties}`
+Java | `${java:version}`
+Localhost | `${localhost:canonical-name}`
+Properties File | `${properties:src/test/resources/document.properties::mykey}`
+Resource Bundle | `${resourceBundle:org.example.testResourceBundleLookup:mykey}`
+Script | `${script:javascript:3 + 4}`
+System Property | `${sys:user.dir}`
+URL Decoder | `${urlDecoder:Hello%20World%21}`
+URL Encoder | `${urlEncoder:Hello World!}`
+URL Content (HTTP) | `${url:UTF-8:http://www.apache.org}`
+URL Content (HTTPS) | `${url:UTF-8:https://www.apache.org}`
+URL Content (File) | `${url:UTF-8:file:///${sys:user.dir}/src/test/resources/document.properties}`
+XML XPath | `${xml:src/test/resources/document.xml:/root/path/to/node}`
+
+> Custom value is not supported in the placeholder.
 
 ## Contributors ✨
 
