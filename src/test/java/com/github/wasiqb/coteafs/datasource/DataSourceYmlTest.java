@@ -17,6 +17,7 @@
 package com.github.wasiqb.coteafs.datasource;
 
 import static com.google.common.truth.Truth.assertWithMessage;
+import static java.lang.System.getProperty;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -107,5 +108,7 @@ public class DataSourceYmlTest {
             .isNotEmpty ();
         assertWithMessage ("Password").that (login.getPassword ())
             .isNotEmpty ();
+        assertWithMessage ("Path").that (login.getPath ())
+            .isEqualTo (getProperty ("user.dir"));
     }
 }

@@ -16,6 +16,8 @@
 
 package com.github.wasiqb.coteafs.datasource.parser;
 
+import static com.github.wasiqb.coteafs.datasource.utils.StringUtils.interpolate;
+
 import java.io.FileInputStream;
 
 import com.google.common.base.CaseFormat;
@@ -40,7 +42,7 @@ public class YamlDataSource implements IDataSource {
             final Constructor constructor = new Constructor (dataClass) {
                 @Override
                 protected String constructScalar (final ScalarNode node) {
-                    return node.getValue ();
+                    return interpolate (node.getValue ());
                 }
             };
             final PropertyUtils propertyUtils = new PropertyUtils () {
