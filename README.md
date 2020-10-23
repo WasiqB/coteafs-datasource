@@ -8,7 +8,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.wasiqb.coteafs/datasource.svg?style=for-the-badge)][maven]
-[![Github Releases](https://img.shields.io/github/downloads/WasiqB/coteafs-datasource/total-green.svg?style=for-the-badge)][release]
+[![Github Releases](https://img.shields.io/github/downloads/WasiqB/coteafs-datasource/total.svg?style=for-the-badge)][release]
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)][license]
 
 ## Usage :running:
@@ -19,7 +19,7 @@
 <dependency>
   <groupId>com.github.wasiqb.coteafs</groupId>
   <artifactId>datasource</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
