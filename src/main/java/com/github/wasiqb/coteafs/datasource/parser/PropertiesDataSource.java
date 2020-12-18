@@ -16,7 +16,7 @@
 
 package com.github.wasiqb.coteafs.datasource.parser;
 
-import static com.fasterxml.jackson.databind.PropertyNamingStrategy.SNAKE_CASE;
+import static com.fasterxml.jackson.databind.PropertyNamingStrategies.SNAKE_CASE;
 
 import java.io.File;
 
@@ -32,6 +32,9 @@ import lombok.SneakyThrows;
 public class PropertiesDataSource implements IDataSource {
     private final JavaPropsMapper mapper;
 
+    /**
+     * Data source constructor.
+     */
     public PropertiesDataSource () {
         this.mapper = new JavaPropsMapper ();
         this.mapper.setPropertyNamingStrategy (SNAKE_CASE);

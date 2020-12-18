@@ -34,10 +34,6 @@ public class DataSourcePropertiesTest {
     /**
      * Test to read Properties file using coteafs-datasource
      *
-     * @param testUrl
-     * @param userName
-     * @param port
-     *
      * @author Faisal Khatri
      * @since Aug 31, 2020
      */

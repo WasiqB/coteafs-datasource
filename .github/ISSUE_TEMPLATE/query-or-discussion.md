@@ -1,7 +1,7 @@
 ---
 name: Query or discussion
 about: Clear your queries or discuss on some topic.
-title: '[Discussion]'
+title: ''
 labels: help wanted
 assignees: ''
 ---

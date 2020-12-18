@@ -26,25 +26,17 @@
     <parent>
         <groupId>com.github.wasiqb.coteafs</groupId>
         <artifactId>parent</artifactId>
-        <version>3.3.5</version>
+        <version>3.5.0</version>
     </parent>
 
     <properties>
         <sonar.projectKey>com.github.wasiqb.coteafs:coteafs-datasource</sonar.projectKey>
-        <coteafs.error.version>1.15.0</coteafs.error.version>
-        <jackson.version>2.11.2</jackson.version>
+        <jackson.version>2.12.0</jackson.version>
         <commons.text.version>1.9</commons.text.version>
-        <snake.version>1.26</snake.version>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.github.wasiqb.coteafs</groupId>
-            <artifactId>error</artifactId>
-            <version>${coteafs.error.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>

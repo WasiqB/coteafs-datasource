@@ -36,14 +36,6 @@ public class DataSourceJsonTest {
     /**
      * Test to read Json file using coteafs-datasource
      *
-     * @param doe
-     * @param ray
-     * @param pi
-     * @param frenchHens
-     * @param callingBirds
-     * @param xmasFifthDay
-     * @param user
-     *
      * @author Faisal Khatri
      * @since Aug 31, 2020
      */

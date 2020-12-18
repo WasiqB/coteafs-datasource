@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Suggestions, Ideas, Bugs, Queries
-    url: https://github.com/WasiqB/coteafs-datasource/issues/new/choose
-    about: Please raise a ticket.
+  - name: Any other suggestions, ideas, queries, any topic of discussions?
+    url: https://github.com/WasiqB/coteafs-datasource/discussions
+    about: Start discussion here.

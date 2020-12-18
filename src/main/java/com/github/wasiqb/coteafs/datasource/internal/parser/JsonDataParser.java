@@ -23,18 +23,20 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.util.JsonParserDelegate;
 
 /**
+ * Parser class to parse JSON file.
+ *
  * @author Wasiq Bhamla
  * @since 03-Oct-2019
  */
 public class JsonDataParser extends JsonParserDelegate {
     /**
-     * @param d
+     * @param parser Parser
      *
      * @author Wasiq Bhamla
      * @since 03-Oct-2019
      */
-    public JsonDataParser (final JsonParser d) {
-        super (d);
+    public JsonDataParser (final JsonParser parser) {
+        super (parser);
     }
 
     /*

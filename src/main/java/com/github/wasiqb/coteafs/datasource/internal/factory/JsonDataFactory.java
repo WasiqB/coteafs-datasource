@@ -19,6 +19,7 @@ import java.io.DataInput;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
+import java.io.Serial;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.io.IOContext;
@@ -26,10 +27,13 @@ import com.fasterxml.jackson.databind.MappingJsonFactory;
 import com.github.wasiqb.coteafs.datasource.internal.parser.JsonDataParser;
 
 /**
+ * Factory class to parse JSON file.
+ *
  * @author Wasiq Bhamla
  * @since 03-Oct-2019
  */
 public class JsonDataFactory extends MappingJsonFactory {
+    @Serial
     private static final long serialVersionUID = 7623910291405568916L;
 
     /**
