@@ -1,4 +1,8 @@
-# coteafs-datasource
+<p align="center">
+  <a href="#">
+    <img src="assets/coteafs-datasource-logo.png" width=300 padding=10 />
+  </a>
+</p>
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)][home]
 [![CircleCI](https://circleci.com/gh/WasiqB/coteafs-datasource.svg?style=svg)][circleci]
@@ -16,10 +20,11 @@
 ### Dependency
 
 ```xml
+
 <dependency>
-  <groupId>com.github.wasiqb.coteafs</groupId>
-  <artifactId>datasource</artifactId>
-  <version>1.1.0</version>
+    <groupId>com.github.wasiqb.coteafs</groupId>
+    <artifactId>datasource</artifactId>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -84,7 +89,7 @@ public class DataSourceYmlTest {
             .forEach (d -> data.add (new Object[] { d }));
         return data.iterator ();
     }
-    
+
     @Test (dataProvider = "getLoginDataYml")
     public void testYmlDataSource (final Login login) {
         assertWithMessage ("User Name").that (login.getUserName ())
@@ -99,8 +104,8 @@ public class DataSourceYmlTest {
 
 #### Parsing placeholders in file field values
 
-You can use placeholders in JSON and YML files. Following is the table of allowed variable formats which can be used
- in the placeholder.
+You can use placeholders in JSON and YML files. Following is the table of allowed variable formats which can be used in
+the placeholder.
 
 Desired value | Sample Placeholder
 ------------|------------

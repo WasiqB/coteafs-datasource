@@ -34,11 +34,6 @@ public class DataSourceXmlTest {
     /**
      * Test to read Json file using coteafs-datasource
      *
-     * @param to
-     * @param from
-     * @param heading
-     * @param body
-     *
      * @author Faisal Khatri
      * @since Aug 31, 2020
      */

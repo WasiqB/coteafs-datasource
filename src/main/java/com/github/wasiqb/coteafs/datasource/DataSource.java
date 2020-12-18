@@ -16,17 +16,16 @@
 
 package com.github.wasiqb.coteafs.datasource;
 
-import static com.github.wasiqb.coteafs.error.util.ErrorUtil.fail;
 import static java.text.MessageFormat.format;
 import static java.util.Objects.requireNonNull;
 
+import com.github.wasiqb.coteafs.datasource.error.OperationNotSupportedError;
 import com.github.wasiqb.coteafs.datasource.parser.IDataSource;
 import com.github.wasiqb.coteafs.datasource.parser.JsonDataSource;
 import com.github.wasiqb.coteafs.datasource.parser.PropertiesDataSource;
 import com.github.wasiqb.coteafs.datasource.parser.XmlDataSource;
 import com.github.wasiqb.coteafs.datasource.parser.YamlDataSource;
 import com.github.wasiqb.coteafs.datasource.utils.DataFileUtil;
-import com.github.wasiqb.coteafs.error.OperationNotSupportedError;
 
 /**
  * Helper class to parse data file.
@@ -52,21 +51,14 @@ public class DataSource {
     }
 
     private static IDataSource getDataSource (final String extension) {
-        switch (extension.toLowerCase ()) {
-            case "yaml":
-            case "yml":
-                return new YamlDataSource ();
-            case "json":
-                return new JsonDataSource ();
-            case "properties":
-                return new PropertiesDataSource ();
-            case "xml":
-                return new XmlDataSource ();
-            default:
-                fail (OperationNotSupportedError.class,
-                    format ("This data file format [{0}] is not supported.", extension));
-        }
-        return null;
+        return switch (extension.toLowerCase ()) {
+            case "yaml", "yml" -> new YamlDataSource ();
+            case "json" -> new JsonDataSource ();
+            case "properties" -> new PropertiesDataSource ();
+            case "xml" -> new XmlDataSource ();
+            default -> throw new OperationNotSupportedError (
+                format ("This data file format [{0}] is not supported.", extension));
+        };
     }
 
     private DataSource () {

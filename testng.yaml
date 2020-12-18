@@ -1,0 +1,8 @@
+name: Data Source Test Suite
+tests:
+  - name: Test
+    classes:
+      - com.github.wasiqb.coteafs.datasource.DataSourcePropertiesTest
+      - com.github.wasiqb.coteafs.datasource.DataSourceXmlTest
+      - com.github.wasiqb.coteafs.datasource.DataSourceYmlTest
+      - com.github.wasiqb.coteafs.datasource.DataSourceJsonTest

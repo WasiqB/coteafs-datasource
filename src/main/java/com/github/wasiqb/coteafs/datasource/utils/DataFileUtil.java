@@ -16,17 +16,17 @@
 
 package com.github.wasiqb.coteafs.datasource.utils;
 
-import static com.github.wasiqb.coteafs.error.util.ErrorUtil.fail;
 import static com.google.common.base.CaseFormat.LOWER_CAMEL;
 import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
 import static java.lang.System.getProperty;
 import static java.text.MessageFormat.format;
+import static java.util.Objects.requireNonNull;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 import java.io.File;
 
 import com.github.wasiqb.coteafs.datasource.annotation.DataFile;
-import com.github.wasiqb.coteafs.error.OperationNotSupportedError;
+import com.github.wasiqb.coteafs.datasource.error.OperationNotSupportedError;
 
 /**
  * Helper class to parse data file and convert the same to data class object.
@@ -51,10 +51,9 @@ public class DataFileUtil<T> {
     }
 
     /**
-     * Gets the data file name as per the data class name or @DataFile annotation.
-     * It will by default convert data class name to lower case hyphen separated words.
-     * If the file name is specified in @DataFile annotation then it will have
-     * higher precedence.
+     * Gets the data file name as per the data class name or @DataFile annotation. It will by default convert data class
+     * name to lower case hyphen separated words. If the file name is specified in @DataFile annotation then it will
+     * have higher precedence.
      *
      * @return Data file name.
      *
@@ -67,8 +66,8 @@ public class DataFileUtil<T> {
         final String fileName = LOWER_CAMEL.to (LOWER_HYPHEN, this.dataClass.getSimpleName ());
         final File folder = new File (getFolder ());
         final File[] files = folder.listFiles ((d, f) -> f.startsWith (fileName));
-        if (files.length == 0) {
-            fail (OperationNotSupportedError.class, format ("File [{0}] not found.", fileName));
+        if (requireNonNull (files).length == 0) {
+            throw new OperationNotSupportedError (format ("File [{0}] not found.", fileName));
         }
         return files[0].getName ();
     }
@@ -114,14 +113,14 @@ public class DataFileUtil<T> {
 
     private void validateDataClass () {
         if (!this.dataClass.isAnnotationPresent (DataFile.class)) {
-            fail (OperationNotSupportedError.class, "Data Class must have @DataFile annotation.");
+            throw new OperationNotSupportedError ("Data Class must have @DataFile annotation.");
         }
     }
 
     private void validateDirectory (final String folder) {
         final File dir = new File (folder);
         if (!dir.isDirectory ()) {
-            fail (OperationNotSupportedError.class, format ("[{0}] is not a directory.", folder));
+            throw new OperationNotSupportedError (format ("[{0}] is not a directory.", folder));
         }
     }
 }

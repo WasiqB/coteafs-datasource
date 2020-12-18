@@ -53,13 +53,6 @@ public class DataSourceYmlTest {
     /**
      * Test to read Yaml file using coteafs-datasource
      *
-     * @param doe
-     * @param ray
-     * @param pi
-     * @param frenchHens
-     * @param callingBirds
-     * @param xmasFifthDay
-     *
      * @author Faisal Khatri
      * @since Aug 29, 2020
      */
@@ -97,7 +90,7 @@ public class DataSourceYmlTest {
     }
 
     /**
-     * @param login
+     * @param login Login data
      *
      * @author Wasiq Bhamla
      * @since Aug 21, 2020

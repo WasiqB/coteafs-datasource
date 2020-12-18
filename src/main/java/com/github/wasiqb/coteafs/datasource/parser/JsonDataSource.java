@@ -16,7 +16,7 @@
 
 package com.github.wasiqb.coteafs.datasource.parser;
 
-import static com.fasterxml.jackson.databind.PropertyNamingStrategy.SNAKE_CASE;
+import static com.fasterxml.jackson.databind.PropertyNamingStrategies.SNAKE_CASE;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ import com.github.wasiqb.coteafs.datasource.internal.factory.JsonDataFactory;
 import lombok.SneakyThrows;
 
 /**
- * Json data source parser.
+ * Json data source.
  *
  * @author Wasiq Bhamla
  * @since 19-08-2020
@@ -34,6 +34,9 @@ import lombok.SneakyThrows;
 public class JsonDataSource implements IDataSource {
     private final ObjectMapper mapper;
 
+    /**
+     * Data source constructor.
+     */
     public JsonDataSource () {
         final JsonFactory factory = new JsonDataFactory ();
         this.mapper = new ObjectMapper (factory);
