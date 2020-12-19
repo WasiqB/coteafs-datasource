@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img src="assets/coteafs-datasource-logo.png" width=300 padding=10 />
+    <img src="assets/coteafs-datasource-logo.jpg" width=300 padding=10 />
   </a>
 </p>
 
