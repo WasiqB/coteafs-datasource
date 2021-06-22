@@ -5,7 +5,7 @@
 </p>
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)][home]
-[![CircleCI](https://circleci.com/gh/WasiqB/coteafs-datasource.svg?style=svg)][circleci]
+[![Test](https://github.com/WasiqB/coteafs-datasource/actions/workflows/test.yml/badge.svg?branch=master)][actions]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a aria-label="All Contributors" href="#contributors-"><img alt="" src="https://img.shields.io/badge/all_contributors-2-17BB8A.svg?style=for-the-badge&labelColor=000000"></a>
@@ -140,8 +140,8 @@ Thanks to these wonderful people ([emoji key][emojis]):
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://mfaisalkhatri.github.io"><img src="https://avatars3.githubusercontent.com/u/18361917?v=4" width="100px;" alt=""/><br /><sub><b>Mohammad Faisal Khatri</b></sub></a><br /><a href="https://github.com/WasiqB/coteafs-datasource/commits?author=mfaisalkhatri" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://wasiqb.github.io"><img src="https://avatars3.githubusercontent.com/u/9130909?v=4" width="100px;" alt=""/><br /><sub><b>Wasiq Bhamla</b></sub></a><br /><a href="https://github.com/WasiqB/coteafs-datasource/commits?author=WasiqB" title="Code">💻</a> <a href="https://github.com/WasiqB/coteafs-datasource/commits?author=WasiqB" title="Tests">⚠️</a> <a href="#infra-WasiqB" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/WasiqB/coteafs-datasource/commits?author=WasiqB" title="Documentation">📖</a> <a href="#ideas-WasiqB" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-WasiqB" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://mfaisalkhatri.github.io"><img src="https://avatars3.githubusercontent.com/u/18361917?v=4" width="100px;" alt=""/><br /><sub><b>Mohammad Faisal Khatri</b></sub></a><br /><a href="https://github.com/WasiqB/coteafs-datasource/commits?author=mfaisalkhatri" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
@@ -154,7 +154,7 @@ This project follows the [all-contributors][contributors] specification. Contrib
 [emojis]: https://allcontributors.org/docs/en/emoji-key
 [contributors]: https://github.com/all-contributors/all-contributors
 [home]: https://github.com/wasiqb/coteafs-config
-[circleci]: https://circleci.com/gh/WasiqB/coteafs-datasource
+[actions]: https://github.com/WasiqB/coteafs-datasource/actions/workflows/test.yml
 [coverage]: https://sonarcloud.io/component_measures?id=com.github.wasiqb.coteafs%3Adatasource&metric=Coverage
 [maven]: https://maven-badges.herokuapp.com/maven-central/com.github.wasiqb.coteafs/datasource
 [release]: https://github.com/WasiqB/coteafs-datasource/releases
