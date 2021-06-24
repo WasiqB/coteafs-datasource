@@ -63,16 +63,19 @@ jobs:
       - name: Test execution
         run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test
 
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Results
+          path: ${{ github.workspace }}/target/surefire-reports/*.xml
+          reporter: java-junit
+
       - name: Upload target folder
         uses: actions/upload-artifact@v2
         with:
           name: target
           path: ${{ github.workspace }}/target
-
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        with:
-          files: ${{ github.workspace }}/target/surefire-reports/*.xml
 
   analysis:
     needs:
