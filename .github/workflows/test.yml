@@ -1,4 +1,4 @@
-name: Test coteafs-listeners project
+name: Test coteafs-datasource project
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - master
       - main
       - issue-*
+      - release
 
 jobs:
   build:

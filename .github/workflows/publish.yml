@@ -18,8 +18,8 @@ jobs:
   validate-input:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.release_type == 'major' ||
-        github.event.inputs.release_type == 'minor' ||
-        github.event.inputs.release_type == 'patch' }}
+      github.event.inputs.release_type == 'minor' ||
+      github.event.inputs.release_type == 'patch' }}
     steps:
       - name: Release Type selected for making release
         run: echo "[${{ github.event.inputs.release_type }}] release in progress."
@@ -286,6 +286,7 @@ jobs:
           name: Version ${{ needs.push-pom.outputs.release-version }}
           prerelease: false
           draft: false
+          discussion_category_name: Announcement
           files: |
             target/*.jar
             target/*.pom
