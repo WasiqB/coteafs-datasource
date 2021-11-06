@@ -111,5 +111,4 @@ jobs:
             -Dsonar.host.url="https://sonarcloud.io" \
             -Dsonar.organization=$SONAR_ORG \
             -Dsonar.login=$SONAR_KEY \
-            -DskipTests \
-            -Dsonar.branch.name=${{ github.ref }}
+            -DskipTests
