@@ -32,7 +32,7 @@
     <properties>
         <sonar.projectKey>com.github.wasiqb.coteafs:coteafs-datasource</sonar.projectKey>
         <jackson.version>2.13.1</jackson.version>
-        <commons.text.version>1.9</commons.text.version>
+        <commons.text.version>1.10.0</commons.text.version>
         <lombok.version>1.18.22</lombok.version>
     </properties>
 
